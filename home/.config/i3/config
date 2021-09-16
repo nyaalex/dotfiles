@@ -184,21 +184,9 @@ for_window [class="Pavucontrol"] floating enable
 
 # default workspaces
 assign [class="firefox"] $ws1
-assign [class="urxvt"] $ws2
 assign [class="discord"] $ws4
 assign [class="Steam"] $ws5
 assign [class="spotify"] $ws6
-
-
-# workspace default monitors
-#workspace $ws1 output DisplayPort-0
-#workspace $ws2 output VGA-0
-#workspace $ws3 output VGA-0
-#workspace $ws4 output VGA-0
-#workspace $ws5 output VGA-0
-#workspace $ws6 output DisplayPort-0
-#workspace $ws9 output DVI-I-2
-#workspace $ws10 output DVI-I-2
 
 workspace "clear0" output VGA-1
 workspace "clear1" output DP-1
