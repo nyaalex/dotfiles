@@ -8,43 +8,20 @@
 theme="$HOME/.config/rofi/themes/screenshot.rasi"
 rofi_command="rofi -theme $theme"
 
-# Error msg
-msg() {
-		rofi -theme "$HOME/.config/rofi/themes/message.rasi" -e "Please install 'scrot' first."
-}
-
 # Options
 screen=""
 area=""
-window=""
 
 # Variable passed to rofi
-options="$screen\n$area\n$window"
+options="$screen\n$area"
 
 chosen="$(echo -e "$options" | $rofi_command -p 'Magick' -dmenu -selected-row 1)"
 case $chosen in
 		$screen)
-				if [[ -f /usr/bin/scrot ]]; then
-						sleep 1; scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
-				else
-						msg
-				fi
+				sleep 1; import -window root -silent PNG:- | tee >$(date +"$HOME/Pictures/Screenshots/Screenshot-%Y-%m-%d-%Hh%Mm%Ss.png") >(xclip -selection clipboard -i -t image/png)
 				;;
 		$area)
-				if [[ -f /usr/bin/scrot ]]; then
-						#import -silent PNG:- | xclip -selection clipboard -i -t image/png
-						sleep 1; import -silent PNG:- | tee >$(date +"$HOME/Pictures/Screenshots/Screenshot-%Y-%m-%d-%Hh%Mm%Ss.png") >(xclip -selection clipboard -i -t image/png)
-						#scrot -s 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
-				else
-						msg
-				fi
-				;;
-		$window)
-				if [[ -f /usr/bin/scrot ]]; then
-						sleep 1; scrot -u 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
-				else
-						msg
-				fi
+				sleep 1; import -silent PNG:- | tee >$(date +"$HOME/Pictures/Screenshots/Screenshot-%Y-%m-%d-%Hh%Mm%Ss.png") >(xclip -selection clipboard -i -t image/png)
 				;;
 esac
 
