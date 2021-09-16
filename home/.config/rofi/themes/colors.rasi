@@ -1,0 +1,14 @@
+@import "colors-rofi-dark.rasi"
+
+* {
+  background-alt: @selected-normal-background;
+	border: @urgent-background;
+	border-alt: @selected-urgent-background;
+	selected: @selected-active-background;
+
+  urgent: @urgent-background;
+
+	accent: @border-alt;
+  background-light: @background-alt;
+}
+	

@@ -1,0 +1,6 @@
+startup_message off
+term screen-256color
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= G}[ %{G}%H %{G}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= G}][ %{y}Load: %l %{G}][%{B}%Y-%m-%d %{W}%c:%s %{G}]'
+termcapinfo xterm* ti@:te@
