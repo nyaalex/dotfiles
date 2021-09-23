@@ -10,7 +10,6 @@
 configuration {
   font: "Futura lt 10";
   show-icons: true;
-  icon-theme: "Papirus";
   display-drun: "";
   drun-display-format: "{name}";
   disable-history: false;

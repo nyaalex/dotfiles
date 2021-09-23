@@ -25,7 +25,7 @@ window {
   transparency: "real";
   border-radius: 0px;
   location: southeast;
-  width: 270px;
+  width: 250px;
   x-offset: -15px;
   y-offset: -45px;
 }
