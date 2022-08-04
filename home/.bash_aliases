@@ -1,5 +1,6 @@
 alias addAudioInput='pacmd load-module module-loopback latency_msec=5'
 alias addAudioOutput='pacmd load-module module-null-sink sink_name=MySink; pacmd update-sink-proplist MySink device.description=MySink'
+alias activate='. venv/bin/activate'
 alias dir='dir --color=auto'
 alias egrep='egrep --color=auto'
 alias emacs='emacsclient -t'

@@ -47,3 +47,4 @@ export EDITOR="emacsclient -t"                  # $EDITOR should open in termina
 export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
 export HISTSIZE=2000
 export HISTFILESIZE=2000
+[ -f "/home/alex/.ghcup/env" ] && source "/home/alex/.ghcup/env" # ghcup-env

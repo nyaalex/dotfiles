@@ -46,11 +46,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use playerctl to control music
-bindsym XF86AudioPause exec --no-startup-id playerctl -a play-pause
-bindsym XF86AudioPlay exec --no-startup-id playerctl -a play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl -a play
+bindsym XF86AudioPlay exec --no-startup-id playerctl -a play
 bindsym XF86AudioNext exec --no-startup-id playerctl -a next
 bindsym XF86AudioPrev exec --no-startup-id playerctl -a previous
-bindsym XF86AudioStop exec --no-startup-id playerctl -a stop
+bindsym XF86AudioStop exec --no-startup-id playerctl -a pause
 
 # Screenshot thing
 bindsym Print exec $HOME/.config/rofi/bin/screenshot
@@ -64,6 +64,9 @@ bindsym $mod+t exec alacritty
 
 #open file Manager
 bindsym $mod+f exec thunar
+
+# Open web browser
+bindsym $mod+b exec firefox
 
 #XKILL for bratty programs that need to be put in their place >:^)
 bindsym $mod+Shift+x exec "xterm -e xkill"
@@ -184,9 +187,21 @@ for_window [class="Pavucontrol"] floating enable
 
 # default workspaces
 assign [class="firefox"] $ws1
+assign [class="urxvt"] $ws2
 assign [class="discord"] $ws4
 assign [class="Steam"] $ws5
 assign [class="spotify"] $ws6
+
+
+# workspace default monitors
+#workspace $ws1 output DisplayPort-0
+#workspace $ws2 output VGA-0
+#workspace $ws3 output VGA-0
+#workspace $ws4 output VGA-0
+#workspace $ws5 output VGA-0
+#workspace $ws6 output DisplayPort-0
+#workspace $ws9 output DVI-I-2
+#workspace $ws10 output DVI-I-2
 
 workspace "clear0" output VGA-1
 workspace "clear1" output DP-1
@@ -259,5 +274,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id fluxgui
-exec_always picom -b
+exec --no-startup-id fluxgui
+exec picom -b
+
+exec --no-startup-id lxpolkit
+exec --no-startup-id ibus-daemon -d
+exec --no-startup-id steam -silent
+exec --no-startup-id discord

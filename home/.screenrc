@@ -3,4 +3,7 @@ term screen-256color
 hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= G}[ %{G}%H %{G}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= G}][ %{y}Load: %l %{G}][%{B}%Y-%m-%d %{W}%c:%s %{G}]'
-termcapinfo xterm* ti@:te@
+
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars

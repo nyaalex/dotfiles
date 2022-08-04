@@ -12,7 +12,6 @@
   --syntaxThree: {color5};
 }}
 
-
 .messages-3amgkR {{
   background-color: var(--bg) !important;
 }}
