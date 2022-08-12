@@ -32,7 +32,6 @@ colors() {
 }
 
 [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
-#[[ -f ~/.extend.bashrc ]] && . ~/.extend.bashrc
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
@@ -43,8 +42,8 @@ colors() {
 
 PS1='\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\$ '
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t"                  # $EDITOR should open in terminal
-export VISUAL="emacsclient -c -a emacs"         # $VISUAL opens in GUI with non-daemon as alternate
+export EDITOR="vim"                  # $EDITOR should open in terminal
+export VISUAL="vim"         # $VISUAL opens in GUI with non-daemon as alternate
 export HISTSIZE=2000
 export HISTFILESIZE=2000
 [ -f "/home/alex/.ghcup/env" ] && source "/home/alex/.ghcup/env" # ghcup-env
