@@ -8,7 +8,7 @@ DISPLAY=:0
 0 19 * * * /./home/alex/.config/i3/lock.sh "Eat Dinner"
 
 0 21 * * mon /./home/alex/.config/i3/lock.sh "Go Shopping"
-0 21 * * teu,fri /./home/alex/.config/i3/lock.sh "Have a Shower"
+0 21 * * tue,fri /./home/alex/.config/i3/lock.sh "Have a Shower"
 
 0 00 * * * /./home/alex/.config/i3/lock.sh "Go To Bed"
 0 15 * * * /./home/alex/.config/i3/lock.sh "Go For Walk"
